@@ -2,6 +2,11 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QSoundEffect>
+#include <QTimer>
+#include <QGraphicsScene>
+#include <QGraphicsView>
+
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -16,8 +21,14 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
-
+    /* 随机添加僵尸 */
+    void addZombie();
+    /* 检查僵尸是否到达目的地：游戏结束 */
+    void check();
 private:
-    Ui::MainWindow *ui;
+    QSoundEffect *sound;
+    QTimer *timer;
+    QGraphicsScene *scene;
+    QGraphicsView *view;
 };
 #endif // MAINWINDOW_H

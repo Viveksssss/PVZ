@@ -14,14 +14,36 @@ find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets Multimedia)
 
 set(PROJECT_SOURCES
         main.cpp
-        mainwindow.cpp
-        mainwindow.h
-        mainwindow.ui
+
+
+
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     find_package(Qt6 REQUIRED COMPONENTS Core)
 find_package(Qt6 REQUIRED COMPONENTS Core)
+find_package(Qt6 REQUIRED COMPONENTS Core)
+find_package(Qt6 REQUIRED COMPONENTS Core)
+find_package(Qt6 REQUIRED COMPONENTS Core)
+find_package(Qt6 REQUIRED COMPONENTS Core)
+find_package(Qt6 REQUIRED COMPONENTS Core)
+find_package(Qt6 REQUIRED COMPONENTS Core)
+find_package(Qt6 REQUIRED COMPONENTS Core)
+find_package(Qt6 REQUIRED COMPONENTS Core)
+find_package(Qt6 REQUIRED COMPONENTS Core)
+find_package(Qt6 REQUIRED COMPONENTS Core)
+find_package(Qt6 REQUIRED COMPONENTS Core)
+find_package(Qt6 REQUIRED COMPONENTS Core)
+find_package(Qt6 REQUIRED COMPONENTS Core)
+find_package(Qt6 REQUIRED COMPONENTS Core)
+find_package(Qt6 REQUIRED COMPONENTS Core)
+find_package(Qt6 REQUIRED COMPONENTS Core)
+find_package(Qt6 REQUIRED COMPONENTS Core)
+find_package(Qt6 REQUIRED COMPONENTS Core)
+find_package(Qt6 REQUIRED COMPONENTS Core)
+find_package(Qt6 REQUIRED COMPONENTS Core)
+find_package(Qt6 REQUIRED COMPONENTS Core)
+find_package(Qt6 REQUIRED COMPONENTS Core Widgets)
 
     qt_add_executable(PVZ
         MANUAL_FINALIZATION
@@ -29,6 +51,28 @@ find_package(Qt6 REQUIRED COMPONENTS Core)
         images.qrc
         other.h other.cpp
         shop.h shop.cpp
+        card.h card.cpp
+        sun.h sun.cpp
+        plant.h plant.cpp
+        shovel.h shovel.cpp
+        sunflower.h sunflower.cpp
+        button.h button.cpp
+        map.h map.cpp
+        mower.h mower.cpp
+        zombie.h zombie.cpp
+        basiczombie.h basiczombie.cpp
+        peashooter.h peashooter.cpp
+        conezombie.h conezombie.cpp
+        pea.h pea.cpp
+        bucketzombie.h bucketzombie.cpp
+        screenzombie.h screenzombie.cpp
+        footballzombie.h footballzombie.cpp
+        cherrybomb.h cherrybomb.cpp
+        wallnut.h wallnut.cpp
+        snowpea.h snowpea.cpp
+        potatomine.h potatomine.cpp
+        repeater.h repeater.cpp
+        mainwindow.h mainwindow.cpp
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET PVZ APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR
@@ -50,7 +94,7 @@ endif()
 
 target_link_libraries(PVZ PRIVATE Qt${QT_VERSION_MAJOR}::Widgets Qt6::Multimedia)
 target_link_libraries(PVZ PRIVATE Qt6::Core)
-target_link_libraries(PVZ PRIVATE Qt6::Core)
+target_link_libraries(PVZ PRIVATE Qt6::Core Qt6::Widgets)
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
 # If you are developing for iOS or macOS you should consider setting an

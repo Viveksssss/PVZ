@@ -2,7 +2,6 @@
 #define OTHER_H
 
 #include <QGraphicsItem>
-#include <QObject>
 
 class Other : public QGraphicsItem
 {

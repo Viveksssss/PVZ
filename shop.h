@@ -2,7 +2,6 @@
 #define SHOP_H
 
 #include "other.h"
-#include <QObject>
 #include "plant.h"
 #include "card.h"
 #include "sun.h"

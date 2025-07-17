@@ -38,8 +38,7 @@ void Shop::advance(int phase){
     if(!phase){
         return;
     }
-    // 无需强制重绘，可能未发生变化
-    // update();
+    update();
     if(++counter>=time){
         counter = 0;
         scene()->addItem(new Sun);
@@ -87,6 +86,27 @@ void Shop::addPlant(QString s, QPointF pos) {
     // ===== 5. 重置商店冷却 =====
     counter = 0;  // 全局冷却计数器归零
 }
+
+
+
+void Shop::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget){
+    painter->drawPixmap(QRect(-270,-45,540,90),QPixmap(":/images/Shop.png"));
+    QFont font;
+    font.setPointSizeF(15);
+    painter->setFont(font);
+    painter->drawText(QRectF(-255,18,65,22),Qt::AlignCenter,QString::number(sun));
+    painter->drawPoint(-220,0);
+
+}
+
+
+
+
+
+
+
+
+
 
 
 

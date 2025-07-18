@@ -9,7 +9,6 @@ Peashooter::Peashooter()
     setMovie(":/images/Peashooter.gif");
 }
 
-/* ! */
 void Peashooter::advance(int phase)
 {
     if (!phase)

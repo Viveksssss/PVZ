@@ -38,7 +38,7 @@ void Pea::advance(int phase)
         Zombie *zombie = qgraphicsitem_cast<Zombie *>(items[QRandomGenerator::global()->bounded(100) % items.size()]);
         zombie->hp -= atk;
         if (snow && zombie->speed > 0.55)
-            zombie->speed /= 2;
+            zombie->speed /=2;
         delete this;
         return;
     }

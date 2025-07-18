@@ -5,18 +5,18 @@
 #include <QtCore/QObject>
 #include <QtCore/qglobal.h>
 #include <QSoundEffect>
-
+#include <QMediaPlayer>
 class QTimer;
 class QGraphicsSceneMouseEvent;
 class QStyleOptionGraphicsItem;
 class Button : public Other
 {
 public:
-    Button(QSoundEffect*s,QTimer*t);
+    Button(QMediaPlayer*s,QTimer*t);
     QRectF boundingRect()const override;
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget) override;
     void mousePressEvent(QGraphicsSceneMouseEvent *event) override;
-    QSoundEffect *sound;
+    QMediaPlayer *sound;
     QTimer *timer;
 };
 

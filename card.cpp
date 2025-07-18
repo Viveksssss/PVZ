@@ -13,7 +13,7 @@ const QMap<QString ,int> Card::map = {
     {"CherryBomb",2},
     {"WallNut",3},
     {"SnowPea",4},
-    {"PhtatoMine",5},
+    {"PotatoMine",5},
     {"Repeater",6},
 };
 
@@ -23,7 +23,7 @@ const QVector<QString> Card::name = {
     "CherryBomb",
     "WallNut",
     "SnowPea",
-    "PhtatoMine",
+    "PotatoMine",
     "Repeater",
 };
 
@@ -103,7 +103,7 @@ void Card::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
 
     // ===== 4. 设置拖拽视觉效果 =====
     drag->setPixmap(QPixmap::fromImage(image));  // 拖拽时跟随的缩略图
-    drag->setHotSpot(QPoint(35, 35));            // 鼠标在缩略图中的锚点位置（居中偏下）
+    drag->setHotSpot(QPoint(35,35));            // 鼠标在缩略图中的锚点位置（居中偏下）
 
     // ===== 5. 执行拖拽操作 =====
     // exec()会阻塞直到拖拽完成，返回拖拽结果（但此处未使用返回值）
@@ -116,4 +116,5 @@ void Card::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
 void Card::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
 {
     setCursor(Qt::ArrowCursor);
+
 }

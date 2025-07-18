@@ -35,7 +35,7 @@ public:
     void addZombie();
     void check();
 private:
-    QSoundEffect *sound;
+    QMediaPlayer *sound;
     QTimer *timer;
     QGraphicsScene *scene;
     QGraphicsView *view;

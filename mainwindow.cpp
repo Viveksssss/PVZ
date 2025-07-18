@@ -1,13 +1,25 @@
 #include "mainwindow.h"
 #include <QUrl>
 #include <QRandomGenerator>
-
+#include <QMediaPlayer>
+#include <QAudioOutput>
+#include <QAudioDevice>      // 音频设备类
+#include <QMediaDevices>     // 音频设备管理
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
 {
     QRandomGenerator::global()->bounded(uint(QTime(0,0,0).secsTo(QTime::currentTime())));
-    sound = new QSoundEffect;
-    sound->setSource(QUrl(":/images/Grazy Dave.mp3"));
-    sound->setLoopCount(QSoundEffect::Infinite);
+    // sound = new QSoundEffect;
+    // sound->setSource(QUrl(":/images/Grazy Dave.mp3"));
+    // sound->setLoopCount(QSoundEffect::Infinite);
+
+    QMediaPlayer *sound = new QMediaPlayer;
+    sound->setSource(QUrl::fromLocalFile("/home/vivek/Tmp/PVZ/Grazy Dave.mp3"));
+    QAudioOutput *output = new QAudioOutput;
+    output->setDevice(QMediaDevices::defaultAudioOutput());
+    sound->setAudioOutput(output);
+    sound->setLoops(QSoundEffect::Infinite);
+    sound->play();
+
     timer = new QTimer;
     scene = new QGraphicsScene(this);
     scene->setSceneRect(150, 0, 900, 600);
@@ -39,14 +51,18 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
     connect(timer, &QTimer::timeout, scene, &QGraphicsScene::advance);
     connect(timer, &QTimer::timeout, this, &MainWindow::addZombie);
     connect(timer, &QTimer::timeout, this, &MainWindow::check);
-    sound->play();
+    // sound->setVolume(50);  // 设置音量
+    // sound->play();
+
+
+
     timer->start(33);
     view->show();
 }
 
 MainWindow::~MainWindow()
 {
-    delete sound;
+    // delete sound;
     delete timer;
     delete scene;
     delete view;

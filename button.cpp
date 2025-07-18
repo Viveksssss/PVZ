@@ -3,7 +3,7 @@
 #include <QTimer>
 #include <QStyleOptionGraphicsItem>
 #include <QGraphicsSceneMouseEvent>
-Button::Button(QSoundEffect*s,QTimer*t)
+Button::Button(QMediaPlayer*s,QTimer*t)
 {
     sound = s;
     timer = t;
